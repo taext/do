@@ -10,5 +10,5 @@ Default Search              (oo) do __ bi
 
 My First Custom Parser      (cus) custom_parser_1.py
 
-My First Script command     (scri) test.txt
+My First Script command     (scr) test.txt
 

@@ -3,7 +3,6 @@ YouTube                     (yt) https://www.youtube.com/results?search_query=mi
 Bing                        (bi) http://www.bing.com/search?q=michael+jackson&qs=n&form=QBLH&sp=-1&pq=michael+jackson&sc=8-15
 
 PowerShell Tutorials        (ps) do powershell tutorial yt
-Somewhere Over The Rainbow  (sw) do somewhere over the rainbow yt
 Thunderstruck AC/DC         (ac) do thunderstruck yt
 
 YouTube Podcast Search      (pod) do __ podcast yt

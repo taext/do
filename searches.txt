@@ -9,12 +9,9 @@ YouTube Podcast Search      (pod) do __ podcast yt
 Default Search              (oo)  do __ bi
 
 My First Custom Parser      (cus) custom_parser_1.py
-
 My First Script             (scr) test.txt
-
 Second Waltz Parser         (prs) parser.py
 
 Open In Chrome tab          (chr) chrome.py
-
 Open in Firefox tab         (fox) fox.py
 

@@ -1,8 +1,7 @@
-# Do 2.9 (January 4 2017)
+# Do 3.5 (January 6 2017)
 
-# What's New: Minor code formatting
-# Next Action: Implement pipe ','
-
+# What's New: Debugging parse_search_url()
+# Next Action: Decide where to list -> str regarding piping
 import re, sys, importlib
 
 
@@ -36,6 +35,7 @@ command_dict = build_command_dict()
 
 
 def parse_command_string(do_command_string):
+
 
     do_search_terms = do_command_string.split(" ")
     do_commands = build_command_dict()
@@ -106,7 +106,7 @@ def parse_search_url(url_string, search_term):
 
         result = launch(string_without_do)
 
-        return(result)
+        return(result[0])
 
     else:
         print("url_string didn't get categorized by any filter, in parse_search_url(): " + url_string)
@@ -184,9 +184,40 @@ def parse_script(filename):
     for line in lines:
         strip_line = line.rstrip()
         do_result = launch(strip_line)
-        result_list.append(do_result)
+        result_list.append(do_result[0])
 
     return(result_list)
+
+
+
+def parse_pipe(do_string):
+
+    elements = do_string.split(",")
+    result = ""
+
+    while elements:
+
+        do_string_build = result + elements.pop(0)
+        result = launch(do_string_build)[0]
+
+    return(result)
+
+
+def go(do_string):
+
+    pipe_match = re.search('\,', do_string)
+
+    if pipe_match:
+
+        result = parse_pipe(do_string)
+        return(result)
+
+    else:
+        result = launch(do_string)
+        return(result)
+
+
+
 
 
 
@@ -194,6 +225,9 @@ def parse_script(filename):
 if __name__ == '__main__':
 
     arg_string = argv_to_string()
-    result = launch(arg_string)
-    printify(result)
+    result = go(arg_string)
 
+    if isinstance(result, list):
+        result = printify(result)
+    else:
+        print(result)
